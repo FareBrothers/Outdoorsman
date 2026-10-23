@@ -1,1 +1,85 @@
-test
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain For Sale</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #101827;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #aab4c3;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .domain {
+      color: #60a5fa;
+      overflow-wrap: anywhere;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 30px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="domain" id="domain"></h1>
+    <h2>This Domain Is For Sale</h2>
+    <p>
+      Interested in purchasing this domain?
+      Contact us to discuss pricing and availability.
+    </p>
+    <a class="button"
+       href="mailto:alex@farebros.com?subject=Domain%20Purchase%20Inquiry">
+      Contact Us
+    </a>
+    <p>alex@farebros.com</p>
+  </div>
+
+  <script>
+    const domain = window.location.hostname
+      .replace(/^www\./, "") || "This Domain";
+
+    document.getElementById("domain").textContent = domain;
+    document.title = domain + " - For Sale";
+  </script>
+</body>
+</html>
